@@ -14,7 +14,11 @@ export const App = () => {
           <Routes>
             <Route
               path="/"
-              element={<ItemListContainer greetings={"hola"} />}
+              element={
+                <ItemListContainer
+                  greetings={"Los mejores precios en sonido en un mismo lugar"}
+                />
+              }
             />
             <Route
               path="/category/:categoryId"

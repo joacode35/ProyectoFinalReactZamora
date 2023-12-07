@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { addCartContext } from "../../api/CartContext";
-import { ItemCart } from "../ItemCart/ItemCart";
+
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { CartView } from "../CartView/CartView";
 
 export const Cart = () => {
   const { addCart, sumPrice } = addCartContext();
@@ -31,8 +32,16 @@ export const Cart = () => {
   if (addCart.length === 0) {
     return (
       <>
-        <p>No hay productos en el carrito</p>
-        <Link to="/"> Hacer compras </Link>
+        <div className="flex justify-center gap-20 text-[30px] mt-60">
+          <p className="flex items-center">No hay productos en el carrito</p>
+          <Link
+            className="bg-slate-600 text-white h-12 p-10 flex  items-center rounded-xl"
+            to="/"
+          >
+            {" "}
+            Hacer compras{" "}
+          </Link>
+        </div>
       </>
     );
   }
@@ -40,10 +49,17 @@ export const Cart = () => {
   return (
     <>
       {addCart.map((product) => (
-        <ItemCart key={product.id} product={product} />
+        <CartView key={product.id} product={product} />
       ))}
-      <p>total: {sumPrice()}</p>
-      <button onClick={handleClick}>Generar orden</button>
+      <div className="flex text-white justify-center container mx-auto rounded-xl gap-40 bg-green-600 mt-5 pt-10 pb-10 mb-5">
+        <p className="flex items-center">total: {sumPrice()}</p>
+        <button
+          className="bg-green-700 h-12 p-5 flex  items-center rounded-xl "
+          onClick={handleClick}
+        >
+          Generar orden
+        </button>
+      </div>
     </>
   );
 };

@@ -6,7 +6,7 @@ export const CartWidget = () => {
 
   return (
     <>
-      <TbShoppingCartCode />
+      <TbShoppingCartCode size={40} />
       <p> {sumProducts() || ""} </p>
     </>
   );

@@ -40,9 +40,12 @@ export const ItemListContainer = ({ greetings }) => {
 
   return (
     <>
-      <div> {greetings} </div>
-
-      <ItemList data={data} />
+      <div className="text-white text-center text-5xl pt-10"> {greetings} </div>
+      <div className="flex mt-20 justify-center">
+        <div className="flex gap-20">
+          <ItemList data={data} />
+        </div>
+      </div>
     </>
   );
 };

@@ -15,15 +15,24 @@ export const ItemDetail = ({ data }) => {
 
   return (
     <div>
-      <img src={data.img} alt="" />
-      <div>
-        <h1> {data.title} </h1>
-        <p> {data.description} </p>
-        {cart ? (
-          <Link to="/cart"> Terminar compra </Link>
-        ) : (
-          <ItemCount initial={3} stock={5} onAdd={onAdd} />
-        )}
+      <h1 className="text-white pt-4 text-3xl pb-3">Detalles del producto</h1>
+      <div className="flex justify-between p-6 bg-white rounded-2xl">
+        <img className="w-64" src={data.img} alt="" />
+
+        <p className="flex items-center mr-16 ml-6"> {data.description} </p>
+        <div className="flex items-center ">
+          {cart ? (
+            <Link
+              className="flex items-center bg-green-500 text-white px-5 pt-2 pb-2 rounded-xl text-md"
+              to="/cart"
+            >
+              {" "}
+              Terminar compra{" "}
+            </Link>
+          ) : (
+            <ItemCount initial={3} stock={5} onAdd={onAdd} />
+          )}
+        </div>
       </div>
     </div>
   );

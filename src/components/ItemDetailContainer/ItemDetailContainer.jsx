@@ -13,5 +13,11 @@ export const ItemDetailContainer = () => {
     getDoc(queryDoc).then((res) => setData({ id: res.id, ...res.data() }));
   }, [itemId]);
 
-  return <ItemDetail data={data} />;
+  return (
+    <div className="container mx-auto mt-5">
+      <div className="row g-2">
+        <ItemDetail data={data} />
+      </div>
+    </div>
+  );
 };
