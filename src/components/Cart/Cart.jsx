@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { addCartContext } from "../../api/CartContext";
-
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { CartView } from "../CartView/CartView";
+import Swal from "sweetalert2";
 
 export const Cart = () => {
   const { addCart, sumPrice } = addCartContext();
@@ -24,9 +24,19 @@ export const Cart = () => {
   };
 
   const handleClick = () => {
+    Swal.fire({
+      color: "#f8f8f8",
+      title: "Gracias",
+      text: "Su compra fue efectuada con exito!",
+      icon: "success",
+      confirmButtonColor: "#1dbc5d",
+      background: "#424242",
+    });
     const db = getFirestore();
     const checkColection = collection(db, "orders");
-    addDoc(checkColection, checkOut).then(({ id }) => console.log(id));
+    addDoc(checkColection, checkOut).then(({ id }) =>
+      console.log("orden:", id)
+    );
   };
 
   if (addCart.length === 0) {
