@@ -3,6 +3,7 @@ import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
+//Traemos firestore, obtenemos los datos a traves de una promesa y con el metodo data() nos trae la informacion en forma de un objeto.
 export const ItemDetailContainer = () => {
   const [data, setData] = useState({});
   const { itemId } = useParams();

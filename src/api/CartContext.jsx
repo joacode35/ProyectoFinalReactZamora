@@ -7,18 +7,7 @@ export const addCartContext = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [addCart, setAddCart] = useState([]);
 
-  // const addItem = (item, newQuantity) => {
-  // const newCart = addCart.filter((prod) => prod.id !== item.id);
-  // newCart.push({ ...item, quantity: newQuantity });
-  // setAddCart(newCart);
-  //  };
-
-  // const addItem = (item, newQuantity) => {
-  // const { quantity = 0 } = addCart.find((prod) => prod.id === item.id) || {};
-  //const newCart = addCart.filter((prod) => prod.id !== item.id);
-  //setAddCart([...newCart, { ...item, quantity: quantity + newQuantity }]);
-  //};
-
+  /*A traves de esta funcion verificamos que si hay un producto en el carrito se mapea con un nuevo array, modificando la cantidad "quantity" con el cambio de estado "setAddCart" */
   const addItem = (item, quantity) => {
     if (findCart(item.id)) {
       setAddCart(

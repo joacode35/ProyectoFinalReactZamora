@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
+//Creamos el componente Item y seteamos la informacion de db.
 export const Item = ({ info }) => {
   return (
     <>
-      <div className="w-80 p-7 border rounded-3xl bg-white">
+      <div className="w-80 p-7 border-4 border-slate-100  shadow-xl hover:shadow-2xl rounded-3xl bg-white pb-10 transform hover:scale-105 transition duration-300">
         <div className="flex-justify-center pb-4">
           <img className="w-60 rounded-lg" src={info.img} alt="" />
         </div>

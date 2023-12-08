@@ -4,6 +4,7 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { CartView } from "../CartView/CartView";
 import Swal from "sweetalert2";
 
+//Creamos el componente Cart e importamos addCartContext para el agregado y suma de productos.
 export const Cart = () => {
   const { addCart, sumPrice } = addCartContext();
 
@@ -24,6 +25,7 @@ export const Cart = () => {
   };
 
   const handleClick = () => {
+    //Agregamos SweetAlert2 para mayor interactividad y hacemos post con "addDoc".
     Swal.fire({
       color: "#f8f8f8",
       title: "Gracias",
@@ -35,7 +37,7 @@ export const Cart = () => {
     const db = getFirestore();
     const checkColection = collection(db, "orders");
     addDoc(checkColection, checkOut).then(({ id }) =>
-      console.log("orden:", id)
+      console.log("id de compra:", id)
     );
   };
 
@@ -61,13 +63,13 @@ export const Cart = () => {
       {addCart.map((product) => (
         <CartView key={product.id} product={product} />
       ))}
-      <div className="flex text-white justify-center container mx-auto rounded-xl gap-40 bg-green-600 mt-5 pt-10 pb-10 mb-5">
+      <div className="flex text-white justify-center container mx-auto rounded-xl gap-40 bg-green-600 mt-10 pt-10 pb-10 mb-5">
         <p className="flex items-center">total: {sumPrice()}</p>
         <button
           className="bg-green-700 h-12 p-5 flex  items-center rounded-xl "
           onClick={handleClick}
         >
-          Generar orden
+          Comprar producto/s
         </button>
       </div>
     </>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+//Creamos el componente ItemCount con el hook useState para realizar cambios en el contador.
 export const ItemCount = ({ initial, stock, onAdd }) => {
   const [count, setCount] = useState(initial);
 

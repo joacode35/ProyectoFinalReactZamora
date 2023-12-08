@@ -1,11 +1,13 @@
 import { addCartContext } from "../../api/CartContext";
 
+//Creamos el componente CartView
 export const CartView = ({ product }) => {
+  //Importamos el addCartContext para aplicar la funcionalidad de eliminacion del producto.
   const { removeCart } = addCartContext();
 
   return (
     <div className="flex mt-20 justify-center">
-      <div className="flex gap-20 bg-slate-200 rounded-xl pr-6">
+      <div className="flex gap-20 bg-slate-200 rounded-xl pr-6 container shadow-xl">
         <img
           className="w-64 rounded-lg"
           src={product.img}
