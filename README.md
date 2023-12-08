@@ -34,4 +34,4 @@ Para finalizar, una vez realizada la compra, se le otorga un mensaje exitoso por
 ## Cursada
 
 Durante todo el tramo de la cursada, fue una experiencia bastante agradable, desde React, la enseñanda del profesor y el bueno soporte de los tutores. No tengo ninguna queja al respecto ya que el tiempo transcurrido durante la cursada sobrepaso mis espectativas.
-No me queda otra cosa que agradecerles por haberme enseñado esta hermosa tecnologia y espero que nos volvamos a encontrar en algun momento. Gracias profesor Luis Mara, a mi tutor Cristian Gianoboli y tutor Boris Stecko 💪😁.
+No me queda otra cosa que agradecerles por haberme enseñado esta hermosa tecnologia y espero que nos volvamos a encontrar en algun momento. Gracias profesor Luis Mara, a mi tutor Cristian Gianoboli y al tutor Boris Stecko 💪😁.
