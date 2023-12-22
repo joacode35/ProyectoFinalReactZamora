@@ -33,5 +33,3 @@ export const App = () => {
     </>
   );
 };
-
-//<ItemListContainer greetings={"holaa"} />
